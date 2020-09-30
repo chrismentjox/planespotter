@@ -1,0 +1,101 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: chris-test-policy
+  #  namespace: cust2
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx
+  ingress:
+    - from:
+      - ipBlock:
+          cidr: 172.17.0.0/16
+      - ipBlock:
+          cidr: 172.19.0.0/16
+      ports:
+      - protocol: TCP
+        port: 80
+      - protocol: TCP
+        port: 443
+
+    - from:
+      - ipBlock:
+          cidr: 172.10.0.0/16
+      - ipBlock:
+          cidr: 172.11.0.0/16
+      ports:
+      - protocol: TCP
+        port: 22
+      - protocol: TCP
+        port: 23
+
+    - from:
+      - ipBlock:
+          cidr: 172.10.0.0/16
+      - ipBlock:
+          cidr: 172.11.0.0/16
+      - ipBlock:
+          cidr: 172.12.0.0/16
+      ports:
+      - protocol: TCP
+        port: 636
+      - protocol: TCP
+        port: 753
+
+    - from:
+      - ipBlock:
+          cidr: 172.10.0.0/16
+      - ipBlock:
+          cidr: 172.11.0.0/16
+      ports:
+      - protocol: TCP
+        port: 988
+      - protocol: TCP
+        port: 999
+
+
+    - from:
+      - ipBlock:
+          cidr: 172.17.0.0/16
+      - ipBlock:
+          cidr: 172.19.0.0/16
+      ports:
+      - protocol: TCP
+        port: 80
+      - protocol: TCP
+        port: 440
+    - from:
+      - ipBlock:
+          cidr: 172.17.0.0/16
+      - ipBlock:
+          cidr: 172.19.0.0/16
+      ports:
+      - protocol: TCP
+        port: 87
+      - protocol: TCP
+        port: 449
+    - from:
+      - ipBlock:
+          cidr: 172.17.0.0/16
+      - ipBlock:
+          cidr: 172.19.0.0/16
+      ports:
+      - protocol: TCP
+        port: 84
+      - protocol: TCP
+        port: 442
+    - from:
+      - ipBlock:
+          cidr: 172.17.0.0/16
+      - ipBlock:
+          cidr: 172.19.0.0/16
+      ports:
+      - protocol: TCP
+        port: 81
+      - protocol: TCP
+        port: 444
+
+    - ports:
+      - protocol: TCP
+        port: 80
