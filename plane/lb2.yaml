@@ -10,4 +10,4 @@ spec:
     targetPort: 80
     name: eighty
   selector:
-    app: nginx
+    app: nginx-deployment
