@@ -64,7 +64,7 @@ spec:
       - protocol: TCP
         port: 80
       - protocol: TCP
-        port: 440
+        port: 441
     - from:
       - ipBlock:
           cidr: 172.17.0.0/16
