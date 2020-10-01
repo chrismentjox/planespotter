@@ -10,4 +10,4 @@ spec:
     targetPort: 8080
     name: eighty
   selector:
-    app: avi-server
+    app: nginx
